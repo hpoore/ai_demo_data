@@ -1,4 +1,3 @@
-key = "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"
 
 from openai import OpenAI
 import pandas as pd
