@@ -3,10 +3,10 @@ import pandas as pd
 from datetime import date
 from demoData_generator import generate_large_dataset_in_chunks  # Replace with your function path
 
-st.set_page_config(page_title="BI Demo Data Generator", layout="wide")
+st.set_page_config(page_title="Phocas AI Demo Data Generator", layout="wide")
 
 st.title("📊 Phocas AI Demo Data Generator")
-
+st.text("Built by Hayden Poore")
 # --- Sidebar Inputs ---
 # --- Sidebar Inputs ---
 with st.sidebar:
