@@ -73,6 +73,8 @@ Generate a realistic, invoice-level sales dataset in CSV format with the followi
 
     prompt = base_prompt
 
+    csv_data = None 
+
     try:
         response = client.chat.completions.create(
             model=model,
