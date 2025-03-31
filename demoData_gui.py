@@ -15,11 +15,11 @@ with st.sidebar:
     
     start_date = st.date_input("Start Date", value=date(2024, 1, 1))
     end_date = st.date_input("End Date", value=(datetime.today()))
-    total_rows = st.number_input("Total Rows (Transactions)", min_value=100, max_value=5000, step=100, value=1000)
+    total_rows = st.number_input("Total Rows (Transactions)", min_value=1, max_value=50000, step=100, value=100)
     #chunk_size = st.number_input("Chunk Size", min_value=100, max_value=1000, step=100, value=250)
     dimensions_input = st.text_area("Dimensions (comma-separated)", value="Customer, Region, Product")
     measures_input = st.text_area("Measures (comma-separated)", value="Quantity, Value, Profit $")
-    trend_config = st.text_area("Optional Trend Rules", placeholder="E.g., Sales spike at end of month")
+    trend_config = st.text_area("Optional Trend Rules and Prompt Additions", placeholder="E.g., Sales spike at end of month")
 
 # --- Run Button in Main Area ---
 # Validate date inputs
