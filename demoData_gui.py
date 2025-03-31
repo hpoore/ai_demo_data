@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from datetime import date
+from datetime import date, datetime
 from demoData_generator import generate_large_dataset_in_chunks  # Replace with your function path
 
 st.set_page_config(page_title="Phocas AI Demo Data Generator", layout="wide")
@@ -14,9 +14,9 @@ with st.sidebar:
     api_key = st.text_input("OpenAI API Key", type="password")
     
     start_date = st.date_input("Start Date", value=date(2024, 1, 1))
-    end_date = st.date_input("End Date", value=date(2024, 3, 31))
-    total_rows = st.number_input("Total Rows", min_value=100, max_value=5000, step=100, value=1000)
-    chunk_size = st.number_input("Chunk Size", min_value=100, max_value=1000, step=100, value=250)
+    end_date = st.date_input("End Date", value=(datetime.today()))
+    total_rows = st.number_input("Total Rows (Transactions)", min_value=100, max_value=5000, step=100, value=1000)
+    #chunk_size = st.number_input("Chunk Size", min_value=100, max_value=1000, step=100, value=250)
     dimensions_input = st.text_area("Dimensions (comma-separated)", value="Customer, Region, Product")
     measures_input = st.text_area("Measures (comma-separated)", value="Quantity, Value, Profit $")
     trend_config = st.text_area("Optional Trend Rules", placeholder="E.g., Sales spike at end of month")
@@ -43,7 +43,7 @@ if run_button and api_key:
             start_date=start_date.isoformat(),
             end_date=end_date.isoformat(),
             total_rows=total_rows,
-            chunk_size=chunk_size,
+            chunk_size=250,
             trend_config=trend_config
         )
 
