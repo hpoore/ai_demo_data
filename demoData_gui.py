@@ -12,7 +12,7 @@ st.text("Built by Hayden Poore")
 with st.sidebar:
     st.header("🔧 Configuration")
     api_key = st.text_input("OpenAI API Key", type="password")
-    
+    industry = st.text_area("Industry/Company Type", placeholder="E.g., Automotive Distribution, Grocery Retail")
     start_date = st.date_input("Start Date", value=date(2024, 1, 1))
     end_date = st.date_input("End Date", value=(datetime.today()))
     total_rows = st.number_input("Total Rows (Transactions)", min_value=1, max_value=50000, step=100, value=100)
