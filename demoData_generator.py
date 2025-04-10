@@ -14,7 +14,7 @@ def generate_demo_dataset(
     row_count=2500,
     output_path=None,
     model="gpt-4o",
-    temperature=0,
+    temperature=0.3,
     trend_config=None,
     save=True  # new flag to control saving per chunk
 ):
