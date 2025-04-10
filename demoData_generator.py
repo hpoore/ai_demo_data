@@ -23,7 +23,7 @@ def generate_demo_dataset(
     fields_str = ", ".join(dimensions + measures)
 
     base_prompt = f"""
-Generate a realistic, invoice-level sales dataset in CSV format with the following:
+Generate a realistic dataset in CSV format with the following:
 - {row_count} rows
 - {row_count} total transactions
 - Include a 'Date' column with dates spread between {start_date} and {end_date}
@@ -79,7 +79,7 @@ Generate a realistic, invoice-level sales dataset in CSV format with the followi
         response = client.chat.completions.create(
             model=model,
             messages=[
-                {"role": "system", "content": "You generate clean, realistic, high-quality sales transaction datasets for business intelligence systems."},
+                {"role": "system", "content": "You generate clean, realistic, high-quality transaction datasets for business intelligence systems."},
                 {"role": "user", "content": prompt}
             ],
             temperature=temperature,
